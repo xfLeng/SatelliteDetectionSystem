@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{77703252-92ea-44b5-8a5f-d0b2601f2c82}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{d31b4778-8270-42cb-bc7d-41544cde21c9}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\about_us\about_us.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\change_skin_widget\change_skin_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\character_widget\character_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\clabel\clabel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\content_widget\content_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main_menu\main_menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main_widget\main_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\push_button\push_button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\setting_dialog\setting_dialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\skin_widget\skin_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\skinwidget\skinwidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\system_tray\system_tray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\title_widget\title_widget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tool_button\tool_button.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_content_widget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_content_widget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_clabel.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_clabel.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_character_widget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_character_widget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_change_skin_widget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_change_skin_widget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_title_widget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_title_widget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_skinwidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_skinwidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_tool_button.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_tool_button.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_system_tray.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_system_tray.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_skin_widget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_skin_widget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_setting_dialog.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_setting_dialog.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_push_button.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_push_button.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_main_widget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_main_widget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_main_menu.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_main_menu.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_about_us.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_about_us.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_QRC.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\about_us\about_us.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\change_skin_widget\change_skin_widget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\character_widget\character_widget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\clabel\clabel.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\content_widget\content_widget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\main_menu\main_menu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\main_widget\main_widget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\push_button\push_button.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\setting_dialog\setting_dialog.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\skin_widget\skin_widget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\skinwidget\skinwidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\system_tray\system_tray.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\title_widget\title_widget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\tool_button\tool_button.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="src\util\util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\skin\0.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\0_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\10.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\10_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\11.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\11_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\12.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\12_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\13.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\13_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\14.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\14_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\15.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\15_big.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\16.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\16_big.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\17.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\17_big.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\18.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\18_big.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\19.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\19_big.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\1_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\20.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\20_big.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\21.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\21_big.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\22.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\22_big.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\23.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\23_big.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\2_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\360.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\360safe.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\3_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\4.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\4_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\5.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\5_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\6.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\6_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\7.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\7_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\8.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\8_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\9.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\skin\9_big.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="QRC.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="img\mainMenu\about.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\auto_run.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\bg_bottom.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\bg_briangle.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\bg_top.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\btn_0.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\btn_1.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\btn_2.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\btn_3.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\btn_open.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\btn_use.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\caipiao.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\sysButton\close.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\sysButton\close_button.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\cloud.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\cloud_five.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\computer.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\desktop.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\desktop_0.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\desktop_1.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\desktop_2.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\newCharacter\desktop_3.jpg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\fireproof.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\first_add.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\game_box.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\toolWidget\gongNeng.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\mainMenu\help.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\mainMenu\home.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\toolWidget\jiaSu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\login.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\logo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\lottery.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\toolWidget\louDong.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\sysButton\main_menu.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\sysButton\max_button.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\medal.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\medal_light.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\toolWidget\menZhen.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\sysButton\min_button.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\mobile.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\toolWidget\muMa.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\net_pretext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\net_repair.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\net_shop.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\net_speed.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\pet.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\power.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\priv.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\toolWidget\qingLi.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\recovery.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\toolWidget\ruanJian.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\safe.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\mainMenu\setting.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\sysButton\skin_button.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\tab.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\toolWidget\tiJian.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\triggerman.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\mainMenu\update.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\contentWidget\version.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="img\toolWidget\xiTong.png">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>
