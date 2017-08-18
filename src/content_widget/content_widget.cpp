@@ -41,9 +41,10 @@ ContentWidget::ContentWidget(QWidget *parent)
     right_splitter->addWidget(right_center_widget);
     right_splitter->addWidget(right_center_function_widget);
     right_splitter->addWidget(right_bottom_widget);
-
+	
+	main_splitter->addWidget(right_splitter);
     main_splitter->addWidget(left_widget);
-    main_splitter->addWidget(right_splitter);
+    
 
     //½ûÖ¹ÍÏ¶¯
     for(int i = 0; i<right_splitter->count();i++)
