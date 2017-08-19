@@ -4,35 +4,26 @@
 
 #include "title_widget.h"
 #include "../tool_button/tool_button.h"
+#pragma execution_character_set("utf-8")
 
 TitleWidget::TitleWidget(QWidget *parent)
     : QWidget(parent)
 {
     version_title = new QLabel();
     skin_button = new PushButton();
-    main_menu_button = new PushButton();
     min_button = new PushButton();
     max_button = new PushButton();
     close_button = new PushButton();
-    medal_button = new QPushButton();
 
     version_title->setStyleSheet("color:white;");
 
     //设置图片
     skin_button->loadPixmap(":/sysButton/skin_button");
-    main_menu_button->loadPixmap(":/sysButton/main_menu");
     min_button->loadPixmap(":/sysButton/min_button");
     max_button->loadPixmap(":/sysButton/max_button");
     close_button->loadPixmap(":/sysButton/close_button");
 
-    QIcon medal_icon(":/contentWidget/medal");
-    medal_button->setIcon(medal_icon);
-    medal_button->setFixedSize(25, 25);
-    medal_button->setIconSize(QSize(25, 25));
-    medal_button->setStyleSheet("background:transparent;");
-
     connect(skin_button, SIGNAL(clicked()), this, SIGNAL(showSkin()));
-    connect(main_menu_button, SIGNAL(clicked()), this, SIGNAL(showMainMenu()));
     connect(min_button, SIGNAL(clicked()), this, SIGNAL(showMin()));
     connect(max_button, SIGNAL(clicked()), this, SIGNAL(showMax()));
     connect(close_button, SIGNAL(clicked()), this, SIGNAL(closeWidget()));
@@ -40,9 +31,7 @@ TitleWidget::TitleWidget(QWidget *parent)
     QHBoxLayout *title_layout = new QHBoxLayout();
     title_layout->addWidget(version_title,0,Qt::AlignVCenter);
     title_layout->addStretch();
-    title_layout->addWidget(medal_button, 0, Qt::AlignTop);
     title_layout->addWidget(skin_button, 0, Qt::AlignTop);
-    title_layout->addWidget(main_menu_button, 0, Qt::AlignTop);
     title_layout->addWidget(min_button, 0, Qt::AlignTop);
     title_layout->addWidget(max_button, 0, Qt::AlignTop);
     title_layout->addWidget(close_button, 0, Qt::AlignTop);
@@ -95,12 +84,11 @@ TitleWidget::TitleWidget(QWidget *parent)
 
 void TitleWidget::translateLanguage()
 {
-    version_title->setText(tr("title"));
-    skin_button->setToolTip(tr("change skin"));
-    main_menu_button->setToolTip(tr("main menu"));
-    min_button->setToolTip(tr("minimize"));
-    max_button->setToolTip(tr("maximize"));
-    close_button->setToolTip(tr("close"));
+    version_title->setText(tr("卫星检测系统"));
+    skin_button->setToolTip(tr("换肤"));
+    min_button->setToolTip(tr("最小化"));
+    max_button->setToolTip(tr("最大化"));
+    close_button->setToolTip(tr("关闭"));
 
     button_list.at(0)->setText(tr("power"));
     button_list.at(1)->setText(tr("mummy"));

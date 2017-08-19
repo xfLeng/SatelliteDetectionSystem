@@ -34,9 +34,7 @@ private:
     bool is_move;
 
     QLabel *version_title; //标题
-    QPushButton *medal_button; //勋章墙
     PushButton *skin_button; //换肤
-    PushButton *main_menu_button; //主菜单
     PushButton *min_button; //最小化
     PushButton *max_button; //最大化
     PushButton *close_button; //关闭

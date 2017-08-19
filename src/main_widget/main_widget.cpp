@@ -30,9 +30,6 @@ MainWidget::MainWidget(QWidget *parent)
     title_widget = new TitleWidget();
     content_widget = new ContentWidget();
     main_menu = new MainMenu();
-    character_widget = new CharacterWidget();
-    about_us_dialog = new AboutUsDialog(this);
-    setting_dialog = new SettingDialog(this);
     skin_widget = new SkinWidget(this);
     system_tray = new SystemTray(this);
 
@@ -73,25 +70,6 @@ MainWidget::~MainWidget()
 
 void MainWidget::paintEvent(QPaintEvent *)
 {
-    /*QPainter painter(this);
-    QPixmap pixmap;
-    pixmap.load(skin_name);
-    painter.drawPixmap(rect(), pixmap);*/
-
-    /*QPainter painter(this);
-    QPixmap pixmap(this->size());
-    pixmap.fill();
-    painter.end();
-    painter.begin(&pixmap);
-    QBrush brush;
-    brush.setTextureImage(QImage(skin_name));
-    painter.setBrush(brush);
-    painter.setPen(Qt::gray);
-    painter.drawRect(0, 0, this->width()-1, this->height()-1);
-    painter.end();
-    painter.begin(this);
-    painter.drawPixmap(this->rect(),pixmap);*/
-
     QPainter painter(this);
     painter.drawPixmap(rect(), QPixmap(skin_name));
 
@@ -158,21 +136,6 @@ void MainWidget::showWidget()
     this->raise();
     this->activateWindow();
     title_widget->turnPage(0);
-}
-
-void MainWidget::showAboutUs()
-{
-    about_us_dialog->exec();
-}
-
-void MainWidget::showNewCharacter()
-{
-    character_widget->show();
-}
-
-void MainWidget::showSettingDialog()
-{
-    setting_dialog->exec();
 }
 
 void MainWidget::changeSkin(QString skin_name)
