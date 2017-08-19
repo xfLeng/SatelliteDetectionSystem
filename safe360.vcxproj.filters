@@ -59,9 +59,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\main_menu\main_menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\main_widget\main_widget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -146,12 +143,6 @@
     <ClCompile Include="Release\moc_main_widget.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="Debug\moc_main_menu.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="Release\moc_main_menu.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_QRC.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -164,9 +155,6 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="src\content_widget\content_widget.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="src\main_menu\main_menu.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="src\main_widget\main_widget.h">
@@ -423,16 +411,10 @@
     <None Include="img\contentWidget\game_box.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="img\toolWidget\gongNeng.png">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="img\mainMenu\help.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\mainMenu\home.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\toolWidget\jiaSu.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\contentWidget\login.png">
@@ -457,9 +439,6 @@
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\contentWidget\medal_light.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\toolWidget\menZhen.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\sysButton\min_button.png">
@@ -492,13 +471,7 @@
     <None Include="img\contentWidget\priv.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="img\toolWidget\qingLi.png">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="img\contentWidget\recovery.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\toolWidget\ruanJian.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\safe.png">
@@ -525,8 +498,25 @@
     <None Include="img\contentWidget\version.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="img\toolWidget\xiTong.png">
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\toolWidget\gongNeng.png">
       <Filter>Resource Files</Filter>
-    </None>
+    </Image>
+    <Image Include="img\toolWidget\jiaSu.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\toolWidget\menZhen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\toolWidget\qingLi.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\toolWidget\ruanJian.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\toolWidget\xiTong.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

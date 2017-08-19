@@ -1,7 +1,6 @@
 #ifndef MAINWIDGET_H
 #define MAINWIDGET_H
 
-#include "../main_menu/main_menu.h"
 #include "../skin_widget/skin_widget.h"
 #include "../system_tray/system_tray.h"
 #include "../title_widget/title_widget.h"
@@ -36,7 +35,6 @@ private:
     ContentWidget *content_widget; //主界面内容
     SystemTray *system_tray; //托盘项
     QString skin_name;//主窗口背景图片的名称
-    MainMenu *main_menu; //主菜单
     SkinWidget *skin_widget; //显示皮肤界面
 
 };

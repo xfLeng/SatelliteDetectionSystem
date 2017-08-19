@@ -29,7 +29,6 @@ MainWidget::MainWidget(QWidget *parent)
 
     title_widget = new TitleWidget();
     content_widget = new ContentWidget();
-    main_menu = new MainMenu();
     skin_widget = new SkinWidget(this);
     system_tray = new SystemTray(this);
 
@@ -51,11 +50,7 @@ MainWidget::MainWidget(QWidget *parent)
     connect(title_widget, SIGNAL(showMax()), this, SLOT(showMax()));
     connect(title_widget, SIGNAL(showMin()), this, SLOT(showMinimized()));
     connect(title_widget, SIGNAL(closeWidget()), this, SLOT(hide()));
-
-    connect(main_menu, SIGNAL(showSettingDialog()), this, SLOT(showSettingDialog()));
-    connect(main_menu, SIGNAL(showNewCharacter()), this, SLOT(showNewCharacter()));
-    connect(main_menu, SIGNAL(showAboutUs()), this, SLOT(showAboutUs()));
-
+  
     connect(skin_widget, SIGNAL(changeSkin(QString)), this, SLOT(changeSkin(QString)));
 
     connect(system_tray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(iconIsActived(QSystemTrayIcon::ActivationReason)));
@@ -106,7 +101,6 @@ void MainWidget::showMainMenu()
     QPoint p = rect().topRight();
     p.setX(p.x() - 150);
     p.setY(p.y() + 22);
-    main_menu->exec(this->mapToGlobal(p));
 }
 
 void MainWidget::iconIsActived(QSystemTrayIcon::ActivationReason reason)

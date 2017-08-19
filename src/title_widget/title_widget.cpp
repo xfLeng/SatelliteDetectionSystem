@@ -41,8 +41,7 @@ TitleWidget::TitleWidget(QWidget *parent)
     skin_button->setContentsMargins(0, 0, 10, 0);
 
     QStringList string_list;
-    string_list<<":/toolWidget/tiJian"<<":/toolWidget/muMa"<<":/toolWidget/louDong"<<":/toolWidget/xiTong"
-              <<":/toolWidget/qingLi"<<":/toolWidget/jiaSu"<<":/toolWidget/menZhen"<<":/toolWidget/ruanJian";
+    string_list<<":/toolWidget/tiJian"<<":/toolWidget/muMa"<<":/toolWidget/louDong";
 
     QHBoxLayout *button_layout = new QHBoxLayout();
 
@@ -90,14 +89,9 @@ void TitleWidget::translateLanguage()
     max_button->setToolTip(tr("最大化"));
     close_button->setToolTip(tr("关闭"));
 
-    button_list.at(0)->setText(tr("power"));
-    button_list.at(1)->setText(tr("mummy"));
-    button_list.at(2)->setText(tr("hole"));
-    button_list.at(3)->setText(tr("repair"));
-    button_list.at(4)->setText(tr("clear"));
-    button_list.at(5)->setText(tr("optimize"));
-    button_list.at(6)->setText(tr("expert"));
-    button_list.at(7)->setText(tr("software"));
+    button_list.at(0)->setText(tr("RAIM"));
+    button_list.at(1)->setText(tr("HIGH"));
+    button_list.at(2)->setText(tr("优化HIGH"));
 }
 
 void TitleWidget::mousePressEvent(QMouseEvent *e)
