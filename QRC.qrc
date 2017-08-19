@@ -8,8 +8,6 @@
         <file alias="close">img/sysButton/close.png</file>
     </qresource>
     <qresource prefix="/contentWidget">
-        <file alias="medal">img/contentWidget/medal.png</file>
-        <file alias="medal_light">img/contentWidget/medal_light.png</file>
         <file alias="power">img/contentWidget/power.png</file>
         <file alias="computer">img/contentWidget/computer.png</file>
         <file alias="cloud">img/contentWidget/cloud.png</file>
@@ -41,15 +39,9 @@
         <file alias="logo">img/logo.png</file>
     </qresource>
     <qresource prefix="/toolWidget">
-        <file alias="gongNeng">img/toolWidget/gongNeng.png</file>
-        <file alias="jiaSu">img/toolWidget/jiaSu.png</file>
         <file alias="louDong">img/toolWidget/louDong.png</file>
-        <file alias="menZhen">img/toolWidget/menZhen.png</file>
         <file alias="muMa">img/toolWidget/muMa.png</file>
-        <file alias="qingLi">img/toolWidget/qingLi.png</file>
-        <file alias="ruanJian">img/toolWidget/ruanJian.png</file>
         <file alias="tiJian">img/toolWidget/tiJian.png</file>
-        <file alias="xiTong">img/toolWidget/xiTong.png</file>
     </qresource>
     <qresource prefix="/skin">
         <file alias="0">img/skin/0.png</file>

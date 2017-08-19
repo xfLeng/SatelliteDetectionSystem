@@ -499,24 +499,4 @@
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="img\toolWidget\gongNeng.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="img\toolWidget\jiaSu.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="img\toolWidget\menZhen.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="img\toolWidget\qingLi.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="img\toolWidget\ruanJian.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="img\toolWidget\xiTong.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-  </ItemGroup>
 </Project>
