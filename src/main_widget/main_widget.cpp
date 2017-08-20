@@ -7,7 +7,7 @@
 #include "../util/util.h"
 
 MainWidget::MainWidget(QWidget *parent)
-    : QWidget(parent)
+	: QWidget(parent)
 {
     setMinimumSize(900, 600);
     setWindowIcon(QIcon(":/img/safe.ico"));
