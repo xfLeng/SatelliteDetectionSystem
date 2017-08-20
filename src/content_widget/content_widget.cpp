@@ -34,8 +34,8 @@ ContentWidget::ContentWidget(QWidget *parent)
     right_splitter->setHandleWidth(1);
     right_splitter->setStyleSheet("QSplitter::handle{background:lightgray;}");
 
-    right_top_widget->setFixedSize(220, 60);
-    right_bottom_widget->setFixedSize(220, 60);
+    right_top_widget->setFixedSize(220, 46);
+    right_bottom_widget->setFixedSize(220, 46);
     right_splitter->addWidget(right_top_widget);
     right_splitter->addWidget(right_center_widget);
     right_splitter->addWidget(right_bottom_widget);
@@ -155,7 +155,7 @@ void ContentWidget::initRightTop()
 	rightTop_layout->addWidget(open_file);
 	rightTop_layout->addWidget(constant_file);
 	rightTop_layout->addStretch();
-	rightTop_layout->setContentsMargins(15, 0, 0, 0);
+	rightTop_layout->setContentsMargins(8, 0, 8, 0);
 
     right_top_widget->setLayout(rightTop_layout);
 }
@@ -196,7 +196,7 @@ void ContentWidget::initRightBottom()
 	bottom_layout->addWidget(start_button);
 	bottom_layout->addWidget(pause_button);
 	bottom_layout->addStretch();
-	bottom_layout->setContentsMargins(15, 0, 0, 0);
+	bottom_layout->setContentsMargins(8, 0,8, 0);
 
     right_bottom_widget->setLayout(bottom_layout);
 }

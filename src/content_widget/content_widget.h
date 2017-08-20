@@ -2,6 +2,13 @@
 #define CONTENTWIDGET_H
 
 #include <QWidget>
+#include <QDialog>
+#include <QGridLayout>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include "datatype.h"
+#include "qtpropertybrowser.h"
+#include "qtpropertymanager.h"
 
 class QLabel;
 class QSplitter;
@@ -49,6 +56,28 @@ private:
     QWidget *right_bottom_widget;
 	QPushButton *start_button;
 	QPushButton *pause_button;
+
+	void WinInI();
+	QtProperty *StarTime;
+	QtProperty *Length;
+	QtProperty *FaultType;
+	QtProperty *SatNo;
+	QtProperty *m_Value;
+	QtProperty *m_FalseAlarmRate;
+	QtProperty *m_MissedRate;
+	QtProperty *m_NoiseStandardDeviation;
+
+	QtIntPropertyManager *StarTimeManager;
+	QtIntPropertyManager *LengthManager;
+	QtEnumPropertyManager *FaultTypeManager;
+	QtIntPropertyManager *SatNoManager;
+	QtDoublePropertyManager *ValueManager;
+	QtDoublePropertyManager *FalseAlarmRateManager;
+	QtDoublePropertyManager *MissedRateManager;
+	QtDoublePropertyManager *NoiseStandardDeviationManager;
+	QPushButton *pushbuttonClose;
+	QPushButton *pushbuttonOk;
+	FaultParametervalue *m_data;
 };
 
 #endif // CONTENTWIDGET_H
