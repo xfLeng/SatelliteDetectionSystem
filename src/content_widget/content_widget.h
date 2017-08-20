@@ -31,6 +31,10 @@ private:
     void initRightBottom();
     void initRight();
 
+private slots:
+	void OkSlot();
+	void CloseSlot();
+
 private:
     QSplitter *main_splitter;
 
