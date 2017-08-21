@@ -31,10 +31,6 @@ private:
     void initRightBottom();
     void initRight();
 
-private slots:
-	void OkSlot();
-	void CloseSlot();
-
 private:
     QSplitter *main_splitter;
 
@@ -61,7 +57,6 @@ private:
 	QPushButton *start_button;
 	QPushButton *pause_button;
 
-	void WinInI();
 	QtProperty *StarTime;
 	QtProperty *Length;
 	QtProperty *FaultType;

@@ -7,6 +7,10 @@
 #include <QToolButton>
 
 #include "content_widget.h"
+#include "qteditorfactory.h"
+#include "qttreepropertybrowser.h"
+#include "qtbuttonpropertybrowser.h"
+#include "qtgroupboxpropertybrowser.h"
 #pragma execution_character_set("utf-8")
 
 ContentWidget::ContentWidget(QWidget *parent)
@@ -163,13 +167,79 @@ void ContentWidget::initRightTop()
 void ContentWidget::initRightCenter()
 {
     right_center_widget = new QWidget();
-   
 
-    QHBoxLayout *h_layout = new QHBoxLayout();
-    h_layout->setSpacing(0);
-    h_layout->setContentsMargins(0, 0, 0, 0);
+	StarTimeManager = new QtIntPropertyManager(this);
+	LengthManager = new QtIntPropertyManager(this);
+	FaultTypeManager = new QtEnumPropertyManager(this);
+	SatNoManager = new QtIntPropertyManager(this);
+	ValueManager = new QtDoublePropertyManager(this);
+	FalseAlarmRateManager = new QtDoublePropertyManager(this);
+	MissedRateManager = new QtDoublePropertyManager(this);
+	NoiseStandardDeviationManager = new QtDoublePropertyManager(this);
+	QtGroupPropertyManager *Fault = new QtGroupPropertyManager(this);
 
-    right_center_widget->setLayout(h_layout);
+	QtProperty *itemFault = Fault->addProperty(tr("故障参数设置"));
+	StarTime = StarTimeManager->addProperty(tr("开始时间"));
+	itemFault->addSubProperty(StarTime);
+	Length = LengthManager->addProperty(tr("故障时长"));
+	itemFault->addSubProperty(Length);
+	FaultType = FaultTypeManager->addProperty(tr("故障类型"));
+	QStringList enumNames;
+	enumNames << tr("阶跃故障") << tr("斜坡故障");
+	FaultTypeManager->setEnumNames(FaultType, enumNames);
+	itemFault->addSubProperty(FaultType);
+	m_Value = ValueManager->addProperty(tr("故障幅值"));
+	itemFault->addSubProperty(m_Value);
+	m_FalseAlarmRate = FalseAlarmRateManager->addProperty(tr("误警率"));
+	FalseAlarmRateManager->setMaximum(m_FalseAlarmRate, 10);
+	FalseAlarmRateManager->setMinimum(m_FalseAlarmRate, 1);
+	itemFault->addSubProperty(m_FalseAlarmRate);
+	m_MissedRate = MissedRateManager->addProperty(tr("漏检率"));
+	MissedRateManager->setMinimum(m_MissedRate, 1);
+	MissedRateManager->setMaximum(m_MissedRate, 10);
+	itemFault->addSubProperty(m_MissedRate);
+	m_NoiseStandardDeviation = NoiseStandardDeviationManager->addProperty(tr("噪声标准差"));
+	NoiseStandardDeviationManager->setMaximum(m_NoiseStandardDeviation, 33.3);
+	NoiseStandardDeviationManager->setMinimum(m_NoiseStandardDeviation, 0);
+	itemFault->addSubProperty(m_NoiseStandardDeviation);
+	SatNo = SatNoManager->addProperty(tr("故障卫星号"));
+	SatNoManager->setMaximum(SatNo, 12);
+	SatNoManager->setMinimum(SatNo, 1);
+	itemFault->addSubProperty(SatNo);
+
+	QtDoubleSpinBoxFactory *spinBoxFactory = new QtDoubleSpinBoxFactory(this);
+	QtSpinBoxFactory *IntFactory = new QtSpinBoxFactory(this);
+	QtEnumEditorFactory *comboBoxFactory = new QtEnumEditorFactory(this);
+	QtAbstractPropertyBrowser *FaultBrowser = new QtGroupBoxPropertyBrowser();
+	FaultBrowser->setFactoryForManager(ValueManager, spinBoxFactory);
+	FaultBrowser->setFactoryForManager(FalseAlarmRateManager, spinBoxFactory);
+	FaultBrowser->setFactoryForManager(MissedRateManager, spinBoxFactory);
+	FaultBrowser->setFactoryForManager(NoiseStandardDeviationManager, spinBoxFactory);
+	FaultBrowser->setFactoryForManager(SatNoManager, IntFactory);
+	FaultBrowser->setFactoryForManager(StarTimeManager, IntFactory);
+	FaultBrowser->setFactoryForManager(LengthManager, IntFactory);
+	FaultBrowser->setFactoryForManager(FaultTypeManager, comboBoxFactory);
+	FaultBrowser->addProperty(itemFault);
+
+	pushbuttonClose = new QPushButton(this);
+	pushbuttonClose->setText(tr("取消"));
+	pushbuttonOk = new QPushButton(this);
+	pushbuttonOk->setText(tr("确定"));
+	connect(pushbuttonClose, SIGNAL(clicked()), this, SLOT(CloseSlot()));
+	connect(pushbuttonOk, SIGNAL(clicked()), this, SLOT(OkSlot()));
+	QHBoxLayout * bottonlayout = new QHBoxLayout;
+	bottonlayout->addStretch(1);
+	bottonlayout->addWidget(pushbuttonOk);
+	bottonlayout->addWidget(pushbuttonClose);
+
+	QVBoxLayout *mainlayout = new QVBoxLayout(this);
+	mainlayout->setSpacing(0);
+	mainlayout->setContentsMargins(0, 0, 0, 0);
+
+	mainlayout->addWidget(FaultBrowser);
+	mainlayout->addLayout(bottonlayout);
+
+    right_center_widget->setLayout(mainlayout);
 }
 
 void ContentWidget::initRightBottom()
@@ -213,3 +283,4 @@ void ContentWidget::translateLanguage()
 	start_button->setText(tr("开始"));
 	pause_button->setText(tr("暂停"));
 }
+
