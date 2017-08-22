@@ -23,6 +23,7 @@ class ContentWidget : public QWidget
 public:
     explicit ContentWidget(QWidget *parent = 0);
     void translateLanguage();
+	ContentWidget(FaultParametervalue &Value, QWidget *parent = 0);
 
 private:
     void initLeft();
@@ -30,6 +31,10 @@ private:
     void initRightCenter();
     void initRightBottom();
     void initRight();
+
+private slots:
+	void OkSlot();
+	void CloseSlot();
 
 private:
     QSplitter *main_splitter;

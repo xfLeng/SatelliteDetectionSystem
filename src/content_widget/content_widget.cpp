@@ -1,3 +1,6 @@
+#if _MSC_VER >=1600
+#pragma execution_character_set("utf-8")
+#endif
 #include <QLabel>
 #include <QEvent>
 #include <QPainter>
@@ -11,7 +14,7 @@
 #include "qttreepropertybrowser.h"
 #include "qtbuttonpropertybrowser.h"
 #include "qtgroupboxpropertybrowser.h"
-#pragma execution_character_set("utf-8")
+
 
 ContentWidget::ContentWidget(QWidget *parent)
     : QWidget(parent)
@@ -70,6 +73,18 @@ ContentWidget::ContentWidget(QWidget *parent)
 
     this->translateLanguage();
 }
+
+//ContentWidget::ContentWidget(FaultParametervalue &Value, QWidget *parent)
+//	:QWidget(parent)
+//{
+//	initRightCenter();
+//	m_data=&Value;
+//	StarTimeManager->setValue(StarTime, m_data->startime);
+//	LengthManager->setValue(Length, m_data->lenth);
+//	FaultTypeManager->setValue(FaultType, m_data->type - 1);
+//	SatNoManager->setValue(SatNo, m_data->SatNO);
+//	ValueManager->setValue(m_Value, m_data->value);
+//}
 
 void ContentWidget::initLeft()
 {
@@ -160,7 +175,7 @@ void ContentWidget::initRightTop()
 	rightTop_layout->addWidget(constant_file);
 	rightTop_layout->addStretch();
 	rightTop_layout->setContentsMargins(8, 0, 8, 0);
-
+	  
     right_top_widget->setLayout(rightTop_layout);
 }
 
@@ -225,11 +240,13 @@ void ContentWidget::initRightCenter()
 	pushbuttonClose->setText(tr("取消"));
 	pushbuttonOk = new QPushButton(this);
 	pushbuttonOk->setText(tr("确定"));
+	pushbuttonOk->isLeftToRight();
 	connect(pushbuttonClose, SIGNAL(clicked()), this, SLOT(CloseSlot()));
 	connect(pushbuttonOk, SIGNAL(clicked()), this, SLOT(OkSlot()));
 	QHBoxLayout * bottonlayout = new QHBoxLayout;
 	bottonlayout->addStretch(1);
 	bottonlayout->addWidget(pushbuttonOk);
+	bottonlayout->addSpacing(5);
 	bottonlayout->addWidget(pushbuttonClose);
 
 	QVBoxLayout *mainlayout = new QVBoxLayout(this);
@@ -238,8 +255,17 @@ void ContentWidget::initRightCenter()
 
 	mainlayout->addWidget(FaultBrowser);
 	mainlayout->addLayout(bottonlayout);
+	mainlayout->addStretch(1);
 
     right_center_widget->setLayout(mainlayout);
+
+	FaultParametervalue value;
+	m_data = &value;
+	StarTimeManager->setValue(StarTime, m_data->startime);
+	LengthManager->setValue(Length, m_data->lenth);
+	FaultTypeManager->setValue(FaultType, m_data->type - 1);
+	SatNoManager->setValue(SatNo, m_data->SatNO);
+	ValueManager->setValue(m_Value, m_data->value);
 }
 
 void ContentWidget::initRightBottom()
@@ -282,5 +308,22 @@ void ContentWidget::translateLanguage()
 	
 	start_button->setText(tr("开始"));
 	pause_button->setText(tr("暂停"));
+}
+
+void ContentWidget::OkSlot()
+{
+	m_data->startime = StarTimeManager->value(StarTime);
+	m_data->lenth = LengthManager->value(Length);
+	m_data->type = FaultTypeManager->value(FaultType) + 1;
+	m_data->SatNO = SatNoManager->value(SatNo);
+	m_data->value = ValueManager->value(m_Value);
+}
+
+void ContentWidget::CloseSlot() {
+	StarTimeManager->setValue(StarTime, 0);
+	LengthManager->setValue(Length, 0);
+	FaultTypeManager->setValue(FaultType, 0);
+	SatNoManager->setValue(SatNo, 0.0);
+	ValueManager->setValue(m_Value, 1);
 }
 
