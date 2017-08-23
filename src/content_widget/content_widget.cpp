@@ -14,6 +14,7 @@
 #include "qttreepropertybrowser.h"
 #include "qtbuttonpropertybrowser.h"
 #include "qtgroupboxpropertybrowser.h"
+#include <QMdiSubWindow>
 
 
 ContentWidget::ContentWidget(QWidget *parent)
@@ -74,75 +75,27 @@ ContentWidget::ContentWidget(QWidget *parent)
     this->translateLanguage();
 }
 
-//ContentWidget::ContentWidget(FaultParametervalue &Value, QWidget *parent)
-//	:QWidget(parent)
-//{
-//	initRightCenter();
-//	m_data=&Value;
-//	StarTimeManager->setValue(StarTime, m_data->startime);
-//	LengthManager->setValue(Length, m_data->lenth);
-//	FaultTypeManager->setValue(FaultType, m_data->type - 1);
-//	SatNoManager->setValue(SatNo, m_data->SatNO);
-//	ValueManager->setValue(m_Value, m_data->value);
-//}
-
 void ContentWidget::initLeft()
 {
     left_widget = new QWidget();
-    label = new QLabel();
-    suggest_label = new QLabel();
-    system_safe_label = new QLabel();
-    power_button = new QPushButton();
+	int w_width = 850;
+	int w_height = 500;
+    left_widget->resize(w_width, w_height);
+	m_deviation = new DeviationInformation(this);
+	m_dopfrom = new DopFrom(this);
+	m_skyplot = new Skyplot(this);
 
-    left_widget->resize(850, 500);
-
-    QPixmap label_pixmap(":/contentWidget/computer");
-    label->setPixmap(label_pixmap);
-    label->setFixedSize(label_pixmap.size());
-
-    QFont suggest_font = suggest_label->font();
-    suggest_font.setPointSize(12);
-    suggest_font.setBold(true);
-    suggest_label->setFont(suggest_font);
-    suggest_label->setStyleSheet("color:gray;");
-
-    QFont system_safe_font = system_safe_label->font();
-    system_safe_font.setBold(true);
-    system_safe_label->setFont(system_safe_font);
-    system_safe_label->setStyleSheet("color:gray;");
-
-    QPixmap pixmap(":/contentWidget/power");
-    power_button->setIcon(pixmap);
-    power_button->setIconSize(pixmap.size());
-    power_button->setFixedSize(180, 70);
-    power_button->setStyleSheet("QPushButton{border-radius:5px; background:rgb(110, 190, 10); color:white;}"
-                                "QPushButton:hover{background:rgb(140, 220, 35);}");
-    QFont power_font = power_button->font();
-    power_font.setPointSize(16);
-    power_button->setFont(power_font);
-
-    QVBoxLayout *v_layout = new QVBoxLayout();
-    v_layout->addWidget(suggest_label);
-    v_layout->addWidget(system_safe_label);
-    v_layout->addStretch();
-    v_layout->setSpacing(15);
-    v_layout->setContentsMargins(0, 20, 0, 0);
-
-    QHBoxLayout *h_layout = new QHBoxLayout();
-    h_layout->addWidget(label, 0, Qt::AlignTop);
-    h_layout->addLayout(v_layout);
-    h_layout->addStretch();
-    h_layout->setSpacing(20);
-    h_layout->setContentsMargins(30, 20, 0, 0);
-
-    QVBoxLayout *main_layout = new QVBoxLayout();
-    main_layout->addLayout(h_layout);
-    main_layout->addWidget(power_button, 0, Qt::AlignCenter);
-    main_layout->addStretch();
-    main_layout->setSpacing(0);
-    main_layout->setContentsMargins(0, 0, 0, 0);
-
-    left_widget->setLayout(main_layout);
+	QMdiSubWindow *deviation = new QMdiSubWindow(this);
+	deviation->setWidget(m_deviation);
+	QMdiSubWindow *dopform = new QMdiSubWindow(this);
+	dopform->setWidget(m_dopfrom);
+	QMdiSubWindow *skyplot = new QMdiSubWindow(this);
+	skyplot->setWidget(m_skyplot);
+	QGridLayout *main_layout = new QGridLayout();
+	main_layout->addWidget(skyplot,0,0,1,1);
+	main_layout->addWidget(dopform,0,1,1,1);
+	main_layout->addWidget(deviation,1,0,1,1);
+	left_widget->setLayout(main_layout);
 }
 
 void ContentWidget::initRight()
@@ -299,12 +252,8 @@ void ContentWidget::initRightBottom()
 
 void ContentWidget::translateLanguage()
 {
-    suggest_label->setText(tr("suggest"));
-    system_safe_label->setText(tr("system safe"));
-    power_button->setText(tr("power"));
-
 	open_file->setText(tr("打开文件"));
-	constant_file->setText(tr("实时连接"));
+	constant_file->setText(tr("TCP连接"));
 	
 	start_button->setText(tr("开始"));
 	pause_button->setText(tr("暂停"));

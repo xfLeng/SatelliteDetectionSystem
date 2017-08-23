@@ -151,6 +151,39 @@
     <ClCompile Include="GeneratedFiles\qrc_QRC.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="Debug\moc_DeviationInformation.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_DeviationInformation.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SatelliteFaultDetection\src\ViewForm\DeviationInformation\DeviationInformation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_DopFrom.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_DopFrom.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SatelliteFaultDetection\src\ViewForm\DOP\DopFrom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_skyplot.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_skyplot.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SatelliteFaultDetection\src\ViewForm\sky\drawsky.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SatelliteFaultDetection\src\ViewForm\sky\skyplot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SatelliteFaultDetection\src\ViewForm\sky\star.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="src\change_skin_widget\change_skin_widget.h">
@@ -186,6 +219,24 @@
     <ClInclude Include="src\util\util.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\DeviationInformation\DeviationInformation.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\DeviationInformation\DeviationInformation.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\DOP\DopFrom.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\DOP\DopFrom.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\sky\skyplot.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\sky\skyplot.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <None Include="img\skin\0.png">
@@ -509,5 +560,26 @@
     <ClInclude Include="dstatypr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_DeviationInformation.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_DopFrom.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_skyplot.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SatelliteFaultDetection\src\ViewForm\sky\drawsky.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SatelliteFaultDetection\src\ViewForm\sky\star.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SatelliteDetectionSystem.rc" />
   </ItemGroup>
 </Project>

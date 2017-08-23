@@ -1,4 +1,4 @@
-#ifndef CONTENTWIDGET_H
+ #ifndef CONTENTWIDGET_H
 #define CONTENTWIDGET_H
 
 #include <QWidget>
@@ -9,6 +9,9 @@
 #include "datatype.h"
 #include "qtpropertybrowser.h"
 #include "qtpropertymanager.h"
+#include "./DeviationInformation/DeviationInformation.h"
+#include"./DOP/DopFrom.h"
+#include "./sky/skyplot.h"
 
 class QLabel;
 class QSplitter;
@@ -40,10 +43,9 @@ private:
     QSplitter *main_splitter;
 
     QWidget *left_widget;
-    QLabel *label;
-    QLabel *suggest_label;
-    QLabel *system_safe_label;
-    QPushButton *power_button; //Á¢¼´Ìå¼ì°´Å¥
+	DeviationInformation *m_deviation;
+	DopFrom *m_dopfrom;
+	Skyplot *m_skyplot;
 
     QSplitter *right_splitter;
     QWidget *right_widget;
