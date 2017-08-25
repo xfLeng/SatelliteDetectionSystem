@@ -22,6 +22,8 @@ signals:
 
 public slots:
     void turnPage(QString current_page);
+	void startPause();
+	void stop();
 
 protected:
     void mousePressEvent(QMouseEvent *);
@@ -40,6 +42,9 @@ private:
     PushButton *close_button; //¹Ø±Õ
 
     QList<ToolButton *> button_list;
+
+	QToolButton *start_pause_btn;
+	QToolButton *stop_btn;
 };
 
 #endif // TITLEWIDGET_H

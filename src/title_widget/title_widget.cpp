@@ -4,6 +4,8 @@
 
 #include "title_widget.h"
 #include "../tool_button/tool_button.h"
+#include <QtDebug>
+#include <QString>
 #pragma execution_character_set("utf-8")
 
 TitleWidget::TitleWidget(QWidget *parent)
@@ -14,7 +16,6 @@ TitleWidget::TitleWidget(QWidget *parent)
     min_button = new PushButton();
     max_button = new PushButton();
     close_button = new PushButton();
-
     version_title->setStyleSheet("color:white;");
 
     //设置图片
@@ -40,6 +41,7 @@ TitleWidget::TitleWidget(QWidget *parent)
     version_title->setContentsMargins(15, 0, 0, 0);
     skin_button->setContentsMargins(0, 0, 10, 0);
 
+
     QStringList string_list;
     string_list<<":/toolWidget/tiJian"<<":/toolWidget/muMa"<<":/toolWidget/louDong";
 
@@ -52,19 +54,37 @@ TitleWidget::TitleWidget(QWidget *parent)
         button_list.append(tool_button);
         connect(tool_button, SIGNAL(clicked()), signal_mapper, SLOT(map()));
         signal_mapper->setMapping(tool_button, QString::number(i, 10));
-
         button_layout->addWidget(tool_button, 0, Qt::AlignBottom);
     }
     connect(signal_mapper, SIGNAL(mapped(QString)), this, SLOT(turnPage(QString)));
 
-    QLabel *logo_label = new QLabel();
-    QPixmap pixmap(":/img/logo");
-    logo_label->setPixmap(pixmap);
-    logo_label->setFixedSize(pixmap.size());
-    logo_label->setCursor(Qt::PointingHandCursor);
+	QHBoxLayout *switch_layout = new QHBoxLayout();
+	start_pause_btn = new QToolButton();
+	stop_btn = new QToolButton();
+	start_pause_btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+	stop_btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
+	QPixmap start_pause_pixmap(":/toolWidget/Start");
+	start_pause_btn->setIcon(start_pause_pixmap);
+	start_pause_btn->setIconSize(start_pause_pixmap.size());
+	start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
+
+	QPixmap stop_pixmap(":/toolWidget/Stop");
+	stop_btn->setIcon(stop_pixmap);
+	stop_btn->setIconSize(stop_pixmap.size());
+	stop_btn->setFixedSize(stop_pixmap.width() + 25, stop_pixmap.height() + 25);
+	stop_btn->setStyleSheet("background:transparent;");
+	button_layout->addWidget(start_pause_btn,0,Qt::AlignBottom);
+	button_layout->addWidget(stop_btn,0,Qt::AlignBottom);
+	start_pause_btn->setStyleSheet("background:transparent;");
+
+	connect(start_pause_btn, SIGNAL(clicked()), this, SLOT(startPause()));
+	connect(stop_btn, SIGNAL(clicked()), this, SLOT(stop()));
+
+	start_pause_btn->setToolTip(tr("开始"));
+	stop_btn->setToolTip(tr("结束"));
+	
     button_layout->addStretch();
-    button_layout->addWidget(logo_label);
     button_layout->setSpacing(8);
     button_layout->setContentsMargins(15, 0, 0, 0);
 
@@ -92,6 +112,7 @@ void TitleWidget::translateLanguage()
     button_list.at(0)->setText(tr("RAIM"));
     button_list.at(1)->setText(tr("HIGH"));
     button_list.at(2)->setText(tr("优化HIGH"));
+
 }
 
 void TitleWidget::mousePressEvent(QMouseEvent *e)
@@ -142,4 +163,35 @@ void TitleWidget::turnPage(QString current_page)
             tool_button->setMousePress(false);
         }
     }
+}
+
+void TitleWidget::startPause() {
+	QString toolTipName= start_pause_btn->toolTip();
+	if (toolTipName=="开始") {
+		start_pause_btn->setToolTip(tr("暂停"));
+		QPixmap start_pause_pixmap(":/toolWidget/Pause");
+		start_pause_btn->setIcon(start_pause_pixmap);
+		start_pause_btn->setIconSize(start_pause_pixmap.size());
+		start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
+	}
+	else {
+		start_pause_btn->setToolTip(tr("开始"));
+		QPixmap start_pause_pixmap(":/toolWidget/Start");
+		start_pause_btn->setIcon(start_pause_pixmap);
+		start_pause_btn->setIconSize(start_pause_pixmap.size());
+		start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
+	}
+
+}
+
+void TitleWidget::stop() {
+	QString toolTipName = start_pause_btn->toolTip();
+	if (toolTipName == "暂停") {
+		start_pause_btn->setToolTip(tr("开始"));
+		QPixmap start_pause_pixmap(":/toolWidget/Start");
+		start_pause_btn->setIcon(start_pause_pixmap);
+		start_pause_btn->setIconSize(start_pause_pixmap.size());
+		start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
+	}
+
 }

@@ -1,37 +1,10 @@
 <RCC>
     <qresource prefix="/sysButton">
         <file alias="skin_button">img/sysButton/skin_button.png</file>
-        <file alias="main_menu">img/sysButton/main_menu.png</file>
         <file alias="min_button">img/sysButton/min_button.png</file>
         <file alias="max_button">img/sysButton/max_button.png</file>
-        <file alias="close_button">img/sysButton/close_button.png</file>
         <file alias="close">img/sysButton/close.png</file>
-    </qresource>
-    <qresource prefix="/contentWidget">
-        <file alias="power">img/contentWidget/power.png</file>
-        <file alias="computer">img/contentWidget/computer.png</file>
-        <file alias="cloud">img/contentWidget/cloud.png</file>
-        <file alias="version">img/contentWidget/version.png</file>
-        <file alias="auto_run">img/contentWidget/auto_run.png</file>
-        <file alias="desktop">img/contentWidget/desktop.png</file>
-        <file alias="first_add">img/contentWidget/first_add.png</file>
-        <file alias="game_box">img/contentWidget/game_box.png</file>
-        <file alias="mobile">img/contentWidget/mobile.png</file>
-        <file alias="net_repair">img/contentWidget/net_repair.png</file>
-        <file alias="net_speed">img/contentWidget/net_speed.png</file>
-        <file alias="net_pretext">img/contentWidget/net_pretext.png</file>
-        <file alias="recovery">img/contentWidget/recovery.png</file>
-        <file alias="login">img/contentWidget/login.png</file>
-        <file alias="fireproof">img/contentWidget/fireproof.png</file>
-        <file alias="triggerman">img/contentWidget/triggerman.png</file>
-        <file alias="net_shop">img/contentWidget/net_shop.png</file>
-        <file alias="360">img/contentWidget/360.png</file>
-        <file alias="caipiao">img/contentWidget/caipiao.png</file>
-        <file alias="cloud_five">img/contentWidget/cloud_five.png</file>
-        <file alias="lottery">img/contentWidget/lottery.png</file>
-        <file alias="pet">img/contentWidget/pet.png</file>
-        <file alias="priv">img/contentWidget/priv.png</file>
-        <file alias="tab">img/contentWidget/tab.png</file>
+        <file alias="close_button">img/sysButton/close_button.png</file>
     </qresource>
     <qresource prefix="/img">
         <file alias="360safe">img/360safe.png</file>
@@ -42,6 +15,10 @@
         <file alias="louDong">img/toolWidget/louDong.png</file>
         <file alias="muMa">img/toolWidget/muMa.png</file>
         <file alias="tiJian">img/toolWidget/tiJian.png</file>
+        <file alias="ARMI">img/toolWidget/armi_btn.png</file>
+        <file alias="Pause">img/toolWidget/pause.png</file>
+        <file alias="Start">img/toolWidget/start.png</file>
+        <file alias="Stop">img/toolWidget/stop.png</file>
     </qresource>
     <qresource prefix="/skin">
         <file alias="0">img/skin/0.png</file>
@@ -93,26 +70,8 @@
         <file alias="23">img/skin/23.jpg</file>
         <file alias="23_big">img/skin/23_big.jpg</file>
     </qresource>
-    <qresource prefix="/newCharacter">
-        <file alias="bg_bottom">img/newCharacter/bg_bottom.png</file>
-        <file alias="bg_briangle">img/newCharacter/bg_briangle.png</file>
-        <file alias="bg_top">img/newCharacter/bg_top.png</file>
-        <file alias="btn_0">img/newCharacter/btn_0.png</file>
-        <file alias="btn_1">img/newCharacter/btn_1.png</file>
-        <file alias="btn_2">img/newCharacter/btn_2.png</file>
-        <file alias="btn_3">img/newCharacter/btn_3.png</file>
-        <file alias="btn_open">img/newCharacter/btn_open.png</file>
-        <file alias="btn_use">img/newCharacter/btn_use.png</file>
-        <file alias="desktop_0">img/newCharacter/desktop_0.jpg</file>
-        <file alias="desktop_1">img/newCharacter/desktop_1.jpg</file>
-        <file alias="desktop_2">img/newCharacter/desktop_2.jpg</file>
-        <file alias="desktop_3">img/newCharacter/desktop_3.jpg</file>
-    </qresource>
-    <qresource prefix="/mainMenu">
-        <file alias="about">img/mainMenu/about.png</file>
-        <file alias="help">img/mainMenu/help.png</file>
-        <file alias="home">img/mainMenu/home.png</file>
-        <file alias="setting">img/mainMenu/setting.png</file>
-        <file alias="update">img/mainMenu/update.png</file>
+    <qresource prefix="/contentWidget">
+        <file>img/contentWidget/btn_bag.png</file>
+        <file>img/contentWidget/login.png</file>
     </qresource>
 </RCC>
