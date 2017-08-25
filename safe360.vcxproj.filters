@@ -344,9 +344,6 @@
     <None Include="img\skin\3.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="img\contentWidget\360.png">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="img\360safe.png">
       <Filter>Resource Files</Filter>
     </None>
@@ -392,85 +389,7 @@
     <CustomBuild Include="QRC.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
-    <None Include="img\mainMenu\about.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\auto_run.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\bg_bottom.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\bg_briangle.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\bg_top.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\btn_0.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\btn_1.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\btn_2.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\btn_3.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\btn_open.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\btn_use.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\caipiao.png">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="img\sysButton\close.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\sysButton\close_button.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\cloud.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\cloud_five.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\computer.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\desktop.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\desktop_0.jpg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\desktop_1.jpg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\desktop_2.jpg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\newCharacter\desktop_3.jpg">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\fireproof.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\first_add.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\game_box.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\mainMenu\help.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\mainMenu\home.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\contentWidget\login.png">
@@ -479,89 +398,28 @@
     <None Include="img\logo.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="img\contentWidget\lottery.png">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="img\toolWidget\louDong.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\sysButton\main_menu.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\sysButton\max_button.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="img\contentWidget\medal.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\medal_light.png">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="img\sysButton\min_button.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\mobile.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\toolWidget\muMa.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="img\contentWidget\net_pretext.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\net_repair.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\net_shop.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\net_speed.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\pet.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\power.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\priv.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\recovery.png">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="img\safe.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\mainMenu\setting.png">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="img\sysButton\skin_button.png">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="img\contentWidget\tab.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\toolWidget\tiJian.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\triggerman.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\mainMenu\update.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="img\contentWidget\version.png">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dstatypr.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_DeviationInformation.h">
       <Filter>Generated Files</Filter>
@@ -578,8 +436,34 @@
     <ClInclude Include="..\SatelliteFaultDetection\src\ViewForm\sky\star.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="SatelliteDetectionSystem.rc" />
+    <Image Include="img\contentWidget\btn_bag.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\sysButton\close_button.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\toolWidget\tiJian.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\toolWidget\armi_btn.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\toolWidget\pause.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\toolWidget\start.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\toolWidget\stop.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SatelliteDetectionSystem1.rc" />
   </ItemGroup>
 </Project>

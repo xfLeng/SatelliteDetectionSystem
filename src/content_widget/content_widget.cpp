@@ -110,16 +110,16 @@ void ContentWidget::initRightTop()
     open_file = new QPushButton();
 	constant_file = new QPushButton();
 	//----------------打开文件------------------------
-	open_file->setFixedSize(120, 40);
-	open_file->setStyleSheet("QPushButton{color:green; border-image:url(:/contentWidget/login);}"
+	open_file->setFixedSize(100, 40);
+	open_file->setStyleSheet("QPushButton{color:green; border-image:url(:/contentWidget/btn_bag);}"
                                 "QPushButton:hover{color:rgb(110, 190, 10);}");
     QFont font = open_file->font();
 	font.setBold(true);
 	font.setPointSize(10);
 	open_file->setFont(font);
 	//----------------实时连接------------------------
-	constant_file->setFixedSize(120, 40);
-	constant_file->setStyleSheet("QPushButton{color:green; border-image:url(:/contentWidget/login);}"
+	constant_file->setFixedSize(100, 40);
+	constant_file->setStyleSheet("QPushButton{color:green; border-image:url(:/contentWidget/btn_bag);}"
 		"QPushButton:hover{color:rgb(110, 190, 10);}");
 	constant_file->setFont(font);
 
@@ -231,12 +231,12 @@ void ContentWidget::initRightBottom()
 	font.setBold(true);
 	font.setPointSize(10);
 
-	start_button->setFixedSize(120, 40);
+	start_button->setFixedSize(100, 40);
 	start_button->setStyleSheet("QPushButton{color:green; border-image:url(:/contentWidget/login);}"
 		"QPushButton:hover{color:rgb(110, 190, 10);}");
 	start_button->setFont(font);
 
-	pause_button->setFixedSize(120, 40);
+	pause_button->setFixedSize(100, 40);
 	pause_button->setStyleSheet("QPushButton{color:green; border-image:url(:/contentWidget/login);}"
 		"QPushButton:hover{color:rgb(110, 190, 10);}");
 	pause_button->setFont(font);
