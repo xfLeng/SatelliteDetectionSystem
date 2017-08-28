@@ -26,7 +26,12 @@ public:
     {
         if (DopFrom->objectName().isEmpty())
             DopFrom->setObjectName(QStringLiteral("DopFrom"));
-        DopFrom->resize(400, 300);
+        DopFrom->resize(155, 80);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(DopFrom->sizePolicy().hasHeightForWidth());
+        DopFrom->setSizePolicy(sizePolicy);
 
         retranslateUi(DopFrom);
 
@@ -35,7 +40,7 @@ public:
 
     void retranslateUi(QWidget *DopFrom)
     {
-        DopFrom->setWindowTitle(QApplication::translate("DopFrom", "DopFrom", 0));
+        DopFrom->setWindowTitle(QApplication::translate("DopFrom", "Dop\345\233\276", 0));
     } // retranslateUi
 
 };

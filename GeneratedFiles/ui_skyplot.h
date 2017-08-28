@@ -33,7 +33,11 @@ public:
     {
         if (Skyplot->objectName().isEmpty())
             Skyplot->setObjectName(QStringLiteral("Skyplot"));
-        Skyplot->resize(420, 443);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(Skyplot->sizePolicy().hasHeightForWidth());
+        Skyplot->setSizePolicy(sizePolicy);
         graphicsView = new QGraphicsView(Skyplot);
         graphicsView->setObjectName(QStringLiteral("graphicsView"));
         graphicsView->setGeometry(QRect(0, 30, 401, 401));

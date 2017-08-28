@@ -184,6 +184,15 @@
     <ClCompile Include="..\SatelliteFaultDetection\src\ViewForm\sky\star.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Debug\moc_ReceiverLocationForm.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_ReceiverLocationForm.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ReceiverLocationForm\ReceiverLocationForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="src\change_skin_widget\change_skin_widget.h">
@@ -236,6 +245,12 @@
     </CustomBuild>
     <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\sky\skyplot.h">
       <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\ReceiverLocationForm\ReceiverLocationForm.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\ReceiverLocationForm\ReceiverLocationForm.ui">
+      <Filter>Form Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -437,6 +452,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_ReceiverLocationForm.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

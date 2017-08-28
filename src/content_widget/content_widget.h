@@ -10,8 +10,9 @@
 #include "qtpropertybrowser.h"
 #include "qtpropertymanager.h"
 #include "./DeviationInformation/DeviationInformation.h"
-#include"./DOP/DopFrom.h"
+#include "./DOP/DopFrom.h"
 #include "./sky/skyplot.h"
+#include "./ReceiverLocationForm/ReceiverLocationForm.h"
 
 class QLabel;
 class QSplitter;
@@ -46,6 +47,8 @@ private:
 	DeviationInformation *m_deviation;
 	DopFrom *m_dopfrom;
 	Skyplot *m_skyplot;
+	ReceiverLocationForm *m_receiverLocation;
+
 
     QSplitter *right_splitter;
     QWidget *right_widget;

@@ -8,7 +8,6 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QToolButton>
-
 #include "content_widget.h"
 #include "qteditorfactory.h"
 #include "qttreepropertybrowser.h"
@@ -84,6 +83,7 @@ void ContentWidget::initLeft()
 	m_deviation = new DeviationInformation(this);
 	m_dopfrom = new DopFrom(this);
 	m_skyplot = new Skyplot(this);
+	m_receiverLocation = new ReceiverLocationForm(this);
 
 	QMdiSubWindow *deviation = new QMdiSubWindow(this);
 	deviation->setWidget(m_deviation);
@@ -91,11 +91,26 @@ void ContentWidget::initLeft()
 	dopform->setWidget(m_dopfrom);
 	QMdiSubWindow *skyplot = new QMdiSubWindow(this);
 	skyplot->setWidget(m_skyplot);
+	QMdiSubWindow *receiverLocation = new QMdiSubWindow(this);
+	receiverLocation->setWidget(m_receiverLocation);
+	
 	QGridLayout *main_layout = new QGridLayout();
+
 	main_layout->addWidget(skyplot,0,0,1,1);
-	main_layout->addWidget(dopform,0,1,1,1);
-	main_layout->addWidget(deviation,1,0,1,1);
+	main_layout->addWidget(dopform,0,1, 1, 1);
+	main_layout->addWidget(receiverLocation,0,2,1,1);
+	main_layout->addWidget(deviation,1,0, 1, 1);
+
+	////行比 1：1
+	//main_layout->setRowStretch(0, 1);
+	//main_layout->setRowStretch(1, 1);
+	////列比 1:1:1
+	//main_layout->setColumnStretch(0, 1);
+	//main_layout->setColumnStretch(1, 1);
+	//main_layout->setColumnStretch(2, 2);
+	
 	left_widget->setLayout(main_layout);
+
 }
 
 void ContentWidget::initRight()
@@ -252,8 +267,8 @@ void ContentWidget::initRightBottom()
 
 void ContentWidget::translateLanguage()
 {
-	open_file->setText(tr("打开文件"));
-	constant_file->setText(tr("TCP连接"));
+	open_file->setText(tr("文件导入"));
+	constant_file->setText(tr("UDP连接"));
 	
 	start_button->setText(tr("开始"));
 	pause_button->setText(tr("暂停"));
