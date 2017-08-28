@@ -84,6 +84,7 @@ void ContentWidget::initLeft()
 	m_dopfrom = new DopFrom(this);
 	m_skyplot = new Skyplot(this);
 	m_receiverLocation = new ReceiverLocationForm(this);
+	m_faultDetectionForm = new FaultDetectionForm(this);
 
 	QMdiSubWindow *deviation = new QMdiSubWindow(this);
 	deviation->setWidget(m_deviation);
@@ -93,13 +94,16 @@ void ContentWidget::initLeft()
 	skyplot->setWidget(m_skyplot);
 	QMdiSubWindow *receiverLocation = new QMdiSubWindow(this);
 	receiverLocation->setWidget(m_receiverLocation);
+	QMdiSubWindow *faultDetection = new QMdiSubWindow(this);
+	faultDetection->setWidget(m_faultDetectionForm);
 	
 	QGridLayout *main_layout = new QGridLayout();
 
 	main_layout->addWidget(skyplot,0,0,1,1);
 	main_layout->addWidget(dopform,0,1, 1, 1);
 	main_layout->addWidget(receiverLocation,0,2,1,1);
-	main_layout->addWidget(deviation,1,0, 1, 1);
+	main_layout->addWidget(faultDetection,1,0, 1, 1);
+	main_layout->addWidget(deviation, 1, 1, 1, 1);
 
 	////ÐÐ±È 1£º1
 	//main_layout->setRowStretch(0, 1);

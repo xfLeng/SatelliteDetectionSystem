@@ -13,6 +13,7 @@
 #include "./DOP/DopFrom.h"
 #include "./sky/skyplot.h"
 #include "./ReceiverLocationForm/ReceiverLocationForm.h"
+#include "./FaultDetectionForm/FaultDetectionForm.h"
 
 class QLabel;
 class QSplitter;
@@ -48,6 +49,7 @@ private:
 	DopFrom *m_dopfrom;
 	Skyplot *m_skyplot;
 	ReceiverLocationForm *m_receiverLocation;
+	FaultDetectionForm *m_faultDetectionForm;
 
 
     QSplitter *right_splitter;
