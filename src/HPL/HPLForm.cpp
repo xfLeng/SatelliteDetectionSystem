@@ -17,7 +17,6 @@
 #include <qwt_math.h>
 #include <math.h>
 
-
 HPLForm::HPLForm(QWidget *parent): 
 	QWidget(parent),
 	ui(new Ui::HPLForm)
