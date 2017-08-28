@@ -14,6 +14,8 @@
 #include "./sky/skyplot.h"
 #include "./ReceiverLocationForm/ReceiverLocationForm.h"
 #include "./FaultDetectionForm/FaultDetectionForm.h"
+#include "./FaultDetectionResult/DetectionResultForm.h"
+#include "./HPL/HPLForm.h"
 
 class QLabel;
 class QSplitter;
@@ -50,6 +52,8 @@ private:
 	Skyplot *m_skyplot;
 	ReceiverLocationForm *m_receiverLocation;
 	FaultDetectionForm *m_faultDetectionForm;
+	DetectionResultForm *m_detetionResultForm;
+	HPLForm *m_HPLForm;
 
 
     QSplitter *right_splitter;

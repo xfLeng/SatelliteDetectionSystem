@@ -17,8 +17,6 @@
 #include <qwt_math.h>
 #include <math.h>
 
-
-
 ReceiverLocationForm::ReceiverLocationForm(QWidget *parent): 
 	QWidget(parent),
 	ui(new Ui::ReceiverLocationForm)
