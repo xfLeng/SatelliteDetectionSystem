@@ -14,6 +14,8 @@
 #include "qtbuttonpropertybrowser.h"
 #include "qtgroupboxpropertybrowser.h"
 #include <QMdiSubWindow>
+#include <QFileDialog>
+#include <QMessageBox>
 
 
 ContentWidget::ContentWidget(QWidget *parent)
@@ -42,7 +44,6 @@ ContentWidget::ContentWidget(QWidget *parent)
     right_splitter->setStyleSheet("QSplitter::handle{background:lightgray;}");
 
     right_top_widget->setFixedSize(220, 46);
-    right_bottom_widget->setFixedSize(220, 46);
     right_splitter->addWidget(right_top_widget);
     right_splitter->addWidget(right_center_widget);
     right_splitter->addWidget(right_bottom_widget);
@@ -80,7 +81,7 @@ void ContentWidget::initLeft()
 	int w_width = 850;
 	int w_height = 500;
     left_widget->resize(w_width, w_height);
-	m_deviation = new DeviationInformation(this);
+	//m_deviation = new DeviationInformation(this);
 	m_dopfrom = new DopFrom(this);
 	m_skyplot = new Skyplot(this);
 	m_receiverLocation = new ReceiverLocationForm(this);
@@ -89,8 +90,8 @@ void ContentWidget::initLeft()
 	m_HPLForm = new HPLForm(this);
 
 
-	QMdiSubWindow *deviation = new QMdiSubWindow(this);
-	deviation->setWidget(m_deviation);
+	//QMdiSubWindow *deviation = new QMdiSubWindow(this);
+	//deviation->setWidget(m_deviation);
 	QMdiSubWindow *dopform = new QMdiSubWindow(this);
 	dopform->setWidget(m_dopfrom);
 	QMdiSubWindow *skyplot = new QMdiSubWindow(this);
@@ -149,6 +150,8 @@ void ContentWidget::initRightTop()
 	constant_file->setStyleSheet("QPushButton{color:green; border-image:url(:/contentWidget/btn_bag);}"
 		"QPushButton:hover{color:rgb(110, 190, 10);}");
 	constant_file->setFont(font);
+
+	connect(open_file,SIGNAL(clicked()),this,SLOT(openFile()));
 
     QHBoxLayout *rightTop_layout = new QHBoxLayout();
 	rightTop_layout->addWidget(open_file);
@@ -251,28 +254,40 @@ void ContentWidget::initRightCenter()
 void ContentWidget::initRightBottom()
 {
     right_bottom_widget = new QWidget();
-	start_button = new QPushButton();
-	pause_button = new QPushButton();
-
+	right_bottom_widget->setFixedSize(220, 80);
 	QFont font = open_file->font();
 	font.setBold(true);
 	font.setPointSize(10);
+	
+	start_pause_btn = new QToolButton(this);
+	stop_btn = new QToolButton(this);
+	start_pause_btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+	QPixmap start_mixmap(":/toolWidget/Start");
+	start_pause_btn->setIcon(start_mixmap);
+	start_pause_btn->setIconSize(start_mixmap.size());
+	//start_pause_btn->setFixedSize(start_mixmap.width()+50, start_mixmap.height()+35);
+	start_pause_btn->setStyleSheet("QToolButton{background:transparent;}"
+		"QToolButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
+	stop_btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
+	QPixmap stop_pixmap(":/toolWidget/Stop");
+	stop_btn->setIcon(stop_pixmap);
+	stop_btn->setIconSize(stop_pixmap.size());
+	//stop_btn->setFixedSize(stop_pixmap.width()+50,stop_pixmap.height()+35);
+	stop_btn->setStyleSheet("QToolButton{background:transparent;}"
+		"QToolButton:hover{border-radius:5px; border:1px solid rgb(210, 225, 230);}");
+	connect(start_pause_btn, SIGNAL(clicked()), this, SLOT(startPause()));
+	connect(stop_btn, SIGNAL(clicked()), this, SLOT(stop()));
 
-	start_button->setFixedSize(100, 40);
-	start_button->setStyleSheet("QPushButton{color:green; border-image:url(:/contentWidget/login);}"
-		"QPushButton:hover{color:rgb(110, 190, 10);}");
-	start_button->setFont(font);
-
-	pause_button->setFixedSize(100, 40);
-	pause_button->setStyleSheet("QPushButton{color:green; border-image:url(:/contentWidget/login);}"
-		"QPushButton:hover{color:rgb(110, 190, 10);}");
-	pause_button->setFont(font);
-
-	QHBoxLayout *bottom_layout = new QHBoxLayout();
-	bottom_layout->addWidget(start_button);
-	bottom_layout->addWidget(pause_button);
+	/*QHBoxLayout *bottom_layout = new QHBoxLayout();
+	bottom_layout->addWidget(start_pause_btn);
+	bottom_layout->addWidget(stop_btn);
 	bottom_layout->addStretch();
-	bottom_layout->setContentsMargins(8, 0,8, 0);
+	bottom_layout->setContentsMargins(8, 0,8, 0);*/
+	QGridLayout *bottom_layout = new QGridLayout();
+	bottom_layout->addWidget(start_pause_btn,0,0);
+	bottom_layout->addWidget(stop_btn, 0, 1);
+	bottom_layout->setSpacing(0);
+	bottom_layout->setContentsMargins(10, 0, 10, 3);
 
     right_bottom_widget->setLayout(bottom_layout);
 }
@@ -281,9 +296,8 @@ void ContentWidget::translateLanguage()
 {
 	open_file->setText(tr("文件导入"));
 	constant_file->setText(tr("UDP连接"));
-	
-	start_button->setText(tr("开始"));
-	pause_button->setText(tr("暂停"));
+	start_pause_btn->setText("开始");
+	stop_btn->setText("暂停");
 }
 
 void ContentWidget::OkSlot()
@@ -301,5 +315,146 @@ void ContentWidget::CloseSlot() {
 	FaultTypeManager->setValue(FaultType, 0);
 	SatNoManager->setValue(SatNo, 0.0);
 	ValueManager->setValue(m_Value, 1);
+}
+
+void ContentWidget::startPause() {
+	QString toolTipName = start_pause_btn->toolTip();
+	if (toolTipName == "开始") {
+		start_pause_btn->setToolTip(tr("暂停"));
+		QPixmap start_pause_pixmap(":/toolWidget/Pause");
+		start_pause_btn->setIcon(start_pause_pixmap);
+		start_pause_btn->setIconSize(start_pause_pixmap.size());
+		start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
+	}
+	else {
+		start_pause_btn->setToolTip(tr("开始"));
+		QPixmap start_pause_pixmap(":/toolWidget/Start");
+		start_pause_btn->setIcon(start_pause_pixmap);
+		start_pause_btn->setIconSize(start_pause_pixmap.size());
+		start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
+	}
+}
+
+void ContentWidget::stop() {
+	QString toolTipName = start_pause_btn->toolTip();
+	if (toolTipName == "暂停") {
+		start_pause_btn->setToolTip(tr("开始"));
+		QPixmap start_pause_pixmap(":/toolWidget/Start");
+		start_pause_btn->setIcon(start_pause_pixmap);
+		start_pause_btn->setIconSize(start_pause_pixmap.size());
+		start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
+	}
+}
+
+void ContentWidget::openFile() {
+	QFileDialog *fileDialog = new QFileDialog(this); 
+    fileDialog->setWindowTitle(tr("打开文件")); 
+	fileDialog->setGeometry(10, 30, 300, 200);//设置文件对话框的显示位置
+    fileDialog->setDirectory("."); //设置文件对话框打开时初始打开的位置
+	QStringList filters;
+	filters << "*.txt";
+    fileDialog->setNameFilters(filters); //设置文件类型过滤器
+    if(fileDialog->exec() == QDialog::Accepted) { 
+		QString path = fileDialog->selectedFiles()[0]; //获取文件路径
+        //QMessageBox::information(NULL, tr("Path"), tr("You selected ") + path);
+
+		int i, j, k, iCnt, iLen, bid, iRtn;
+		QString  tStr, tStrA[50], sTrkFile;
+		int  iDatColA[12];
+		int  iAllCnt, iRdDatCnt, iDatDisTime = 100;
+		struct TUserTrackRec lUserTrajA[2];
+		double  l_last_acc[3], l_last_jek[3];
+		__int64  iDataBDT;
+		QFile file(path);
+		if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+			return;
+		}
+
+		QStringList *TempList = new QStringList();
+		while (!file.atEnd()) {
+			QByteArray line = file.readLine();
+			QString str(line);
+			str = str.replace(QString("\n"), QString(""));
+			TempList->append(str);
+			qDebug() << str;
+		}
+		iDatColA[0] = 3;
+		iDatColA[1] = 4;
+		iDatColA[2] = 5;
+		iDatColA[3] = 6;
+		iDatColA[4] = 7;
+		iDatColA[5] = 8;
+		iDatColA[6] = 9;
+		iDatColA[7] = 10;
+		iDatColA[8] = 11;
+		iDatColA[9] = 12;
+		iDatColA[10] = 13;
+		iDatColA[11] = 14;
+		for (i = 0;i<12;i++)
+		{
+			if (iDatColA[i]<0 || iDatColA[i]>40)
+				iDatColA[i] = 49;
+		}
+		iCnt = TempList->count() - 1;//9389
+		iDataBDT = 0;
+		iRdDatCnt = 0;
+		iAllCnt = 5000;
+		if (iCnt<iAllCnt)
+			iAllCnt = iCnt;
+		for (i = 0;i<iAllCnt;i++)
+		{
+			tStr = TempList->value(iRdDatCnt) + ' ';
+			for (j = 0;j<50;j++)
+				tStrA[j] = "";
+			iLen = tStr.length();       //245
+			bid = 0;
+			for (j = 0;j<iLen;j++)
+			{
+				if (tStr[j + 1] != ' ' && tStr[j + 1] != '\t')
+				{
+					tStrA[bid] = tStrA[bid] + tStr[j + 1];
+				}else
+				{
+					if (tStrA[bid] != "")
+						bid++;
+				}
+			}
+
+			tStrA[49] = "0"; //用于未用参数转换
+
+			lTrkTransAry[iRdDatCnt].dCMDID = 0x0A5A5A05;
+			lTrkTransAry[iRdDatCnt].dMsgLEN = sizeof(struct TUDPTrackTransRec);
+			lTrkTransAry[iRdDatCnt].dMsgNo = 1;
+
+			lTrkTransAry[iRdDatCnt].dTrackBDT = tStrA[0].toFloat();//iDataBDT;
+			lTrkTransAry[iRdDatCnt].dTrackID = iRdDatCnt;
+			lTrkTransAry[iRdDatCnt].dbeSimTime = 0;
+			lTrkTransAry[iRdDatCnt].dUserPosX = tStrA[iDatColA[0]].toFloat(); //用户位置X
+			lTrkTransAry[iRdDatCnt].dUserPosY = tStrA[iDatColA[1]].toFloat(); //用户位置Y
+			lTrkTransAry[iRdDatCnt].dUserPosZ = tStrA[iDatColA[2]].toFloat(); //用户位置Z
+
+			lTrkTransAry[iRdDatCnt].dUserVelX = tStrA[iDatColA[3]].toFloat(); //用户速度X
+			lTrkTransAry[iRdDatCnt].dUserVelY = tStrA[iDatColA[4]].toFloat(); //用户速度Y
+			lTrkTransAry[iRdDatCnt].dUserVelZ = tStrA[iDatColA[5]].toFloat(); //用户速度Z
+
+			lTrkTransAry[iRdDatCnt].dUserAccX = 0; //用户加速度X
+			lTrkTransAry[iRdDatCnt].dUserAccY = 0; //用户加速度Y
+			lTrkTransAry[iRdDatCnt].dUserAccZ = 0; //用户加速度Z
+
+			lTrkTransAry[iRdDatCnt].dUserJekX = 0; //用户加加速度X
+			lTrkTransAry[iRdDatCnt].dUserJekY = 0;//用户加加速度Y
+			lTrkTransAry[iRdDatCnt].dUserJekZ = 0;//用户加加速度Z
+			iRdDatCnt++;
+			iDataBDT = iDataBDT + iDatDisTime;
+		}
+		QMessageBox::information(NULL, tr("提示"), tr("数据装载完成！"));
+		delete TempList;
+		glTrkDataID = 0;
+		open_file->setEnabled(false);
+     }
+}
+
+void ContentWidget::constantFile() {
+	
 }
 

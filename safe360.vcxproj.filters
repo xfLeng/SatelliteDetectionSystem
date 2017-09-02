@@ -258,9 +258,6 @@
     <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\DeviationInformation\DeviationInformation.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\DeviationInformation\DeviationInformation.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="..\SatelliteFaultDetection\src\ViewForm\DOP\DopFrom.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -481,9 +478,6 @@
     <ClInclude Include="dstatypr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GeneratedFiles\ui_DeviationInformation.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_DopFrom.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
@@ -510,6 +504,9 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_HPLForm.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_DeviationInformation.h">
+      <Filter>Form Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

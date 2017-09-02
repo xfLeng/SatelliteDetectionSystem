@@ -59,30 +59,6 @@ TitleWidget::TitleWidget(QWidget *parent)
     connect(signal_mapper, SIGNAL(mapped(QString)), this, SLOT(turnPage(QString)));
 
 	QHBoxLayout *switch_layout = new QHBoxLayout();
-	start_pause_btn = new QToolButton();
-	stop_btn = new QToolButton();
-	start_pause_btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-	stop_btn->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
-
-	QPixmap start_pause_pixmap(":/toolWidget/Start");
-	start_pause_btn->setIcon(start_pause_pixmap);
-	start_pause_btn->setIconSize(start_pause_pixmap.size());
-	start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
-
-	QPixmap stop_pixmap(":/toolWidget/Stop");
-	stop_btn->setIcon(stop_pixmap);
-	stop_btn->setIconSize(stop_pixmap.size());
-	stop_btn->setFixedSize(stop_pixmap.width() + 25, stop_pixmap.height() + 25);
-	stop_btn->setStyleSheet("background:transparent;");
-	button_layout->addWidget(start_pause_btn,0,Qt::AlignBottom);
-	button_layout->addWidget(stop_btn,0,Qt::AlignBottom);
-	start_pause_btn->setStyleSheet("background:transparent;");
-
-	connect(start_pause_btn, SIGNAL(clicked()), this, SLOT(startPause()));
-	connect(stop_btn, SIGNAL(clicked()), this, SLOT(stop()));
-
-	start_pause_btn->setToolTip(tr("开始"));
-	stop_btn->setToolTip(tr("结束"));
 	
     button_layout->addStretch();
     button_layout->setSpacing(8);
@@ -163,35 +139,4 @@ void TitleWidget::turnPage(QString current_page)
             tool_button->setMousePress(false);
         }
     }
-}
-
-void TitleWidget::startPause() {
-	QString toolTipName= start_pause_btn->toolTip();
-	if (toolTipName=="开始") {
-		start_pause_btn->setToolTip(tr("暂停"));
-		QPixmap start_pause_pixmap(":/toolWidget/Pause");
-		start_pause_btn->setIcon(start_pause_pixmap);
-		start_pause_btn->setIconSize(start_pause_pixmap.size());
-		start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
-	}
-	else {
-		start_pause_btn->setToolTip(tr("开始"));
-		QPixmap start_pause_pixmap(":/toolWidget/Start");
-		start_pause_btn->setIcon(start_pause_pixmap);
-		start_pause_btn->setIconSize(start_pause_pixmap.size());
-		start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
-	}
-
-}
-
-void TitleWidget::stop() {
-	QString toolTipName = start_pause_btn->toolTip();
-	if (toolTipName == "暂停") {
-		start_pause_btn->setToolTip(tr("开始"));
-		QPixmap start_pause_pixmap(":/toolWidget/Start");
-		start_pause_btn->setIcon(start_pause_pixmap);
-		start_pause_btn->setIconSize(start_pause_pixmap.size());
-		start_pause_btn->setFixedSize(start_pause_pixmap.width() + 25, start_pause_pixmap.height() + 25);
-	}
-
 }
